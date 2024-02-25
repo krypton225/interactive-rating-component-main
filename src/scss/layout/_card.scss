@@ -1,0 +1,75 @@
+::selection {
+    background-color: var(--primary-orange);
+    color: var(--white);
+}
+
+body {
+    display: grid;
+    place-items: center;
+    font-family: "Overpass", sans-serif;
+    background-color: var(--very-dark-blue);
+}
+
+.main {
+    $light-dark-blue: lighten(hsl(213, 19%, 18%), 5%);
+
+    & > section {
+        width: 25rem;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        background-color: var(--dark-blue);
+        color: var(--white);
+
+        @media (max-width: 576px) {
+            width: 22.5rem;
+        }
+
+        .start-img {
+            $size: 2.75rem;
+
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $light-dark-blue;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .desc {
+            color: var(--light-grey);
+        }
+
+        .rating-card__numbers {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__item {
+                $size: 3rem;
+
+                width: $size;
+                height: $size;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $light-dark-blue;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: var(--primary-orange);
+                }
+            }
+        }
+    }
+}

@@ -23,5 +23,30 @@ html(lang="en")
         link(rel="stylesheet" href="./public/index.css")
 
     body
+        main(class="main" id="main")
+            section(class="rating-card" id="rating-card")
+                div(class="start-img")
+                    +star()
+
+                +space()
+                div(class="rating-card__info")
+                    p(class="title") How did we do?
+
+                    +space()
+                    p(class="desc") 
+                        | Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
+
+                +space()
+                div(class="rating-card__numbers")
+                    -
+                        const ratingArray = [1, 2, 3, 4, 5];
+
+                    each item in ratingArray
+                        span(class="rating-card__numbers__item") #{item}
+
+                +space()
+                div(class="rating-card__submit")
+                    button(class="btn") submit
+
         script(src="./public/main.bundle.js") 
         +no-script()
