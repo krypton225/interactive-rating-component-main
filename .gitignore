@@ -19,3 +19,5 @@ node_modules
 
 # The follwing file is just a compiled file from typescript which we will not need.
 public/index.js
+
+src/styles/index.css
