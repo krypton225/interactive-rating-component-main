@@ -1,3 +1,4 @@
+include ./components/_index
 include ./mixins/_index
 
 doctype html
@@ -22,5 +23,6 @@ html(lang="en")
         link(rel="stylesheet" href="./public/index.css")
 
     body
+        +illustration()
         script(src="./public/main.bundle.js") 
         +no-script()
