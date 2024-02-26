@@ -1,3 +1,5 @@
+$lighter-dark-blue: lighten(hsl(213, 19%, 18%), 5%);
+
 ::selection {
     background-color: var(--primary-orange);
     color: var(--white);
@@ -11,10 +13,14 @@ body {
 }
 
 .main {
-    $light-dark-blue: lighten(hsl(213, 19%, 18%), 5%);
+    width: 25rem;
+    min-height: 390px;
+    position: relative;
+    overflow: hidden;
 
     & > section {
         width: 25rem;
+        min-height: 24.25rem;
         padding: 2rem;
         border-radius: 1.5rem;
         display: flex;
@@ -22,6 +28,8 @@ body {
         gap: 2rem;
         background-color: var(--dark-blue);
         color: var(--white);
+        z-index: 99;
+        transition: all 0.3s ease-in-out;
 
         @media (max-width: 576px) {
             width: 22.5rem;
@@ -36,7 +44,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: $light-dark-blue;
+            background-color: $lighter-dark-blue;
         }
 
         .title {
@@ -47,29 +55,82 @@ body {
         .desc {
             color: var(--light-grey);
         }
+    }
+}
 
-        .rating-card__numbers {
+.rating-card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    visibility: visible;
+
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+        left: 35rem;
+    }
+
+    &__numbers {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__item {
+            $size: 3rem;
+
+            width: $size;
+            height: $size;
+            border-radius: 50%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            background-color: $lighter-dark-blue;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
 
-            &__item {
-                $size: 3rem;
-
-                width: $size;
-                height: $size;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: $light-dark-blue;
-                cursor: pointer;
-                transition: background-color 0.3s ease-in-out;
-
-                &:hover {
-                    background-color: var(--primary-orange);
-                }
+            &:hover {
+                background-color: var(--primary-orange);
             }
+        }
+    }
+}
+
+.thank {
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    opacity: 0;
+    visibility: hidden;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__select {
+        display: inline-flex;
+        padding-block: 0.25rem;
+        padding-inline: 1rem;
+        border-radius: 2rem;
+        color: lighten($color: hsl(25, 97%, 53%), $amount: 20%);
+        background-color: $lighter-dark-blue;
+    }
+
+    &__info {
+        &__title {
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        &__desc {
+            width: 95%;
+            color: var(--light-grey);
         }
     }
 }

@@ -16,7 +16,7 @@
   \*********************************/
 /***/ (() => {
 
-eval("\n\n\n//# sourceURL=webpack://interactive-rating-component-main/./src/typescript/index.ts?");
+eval("\nconst App = (function () {\n    class Toggler {\n        static start() {\n            const ratingCard = document.getElementById(\"rating-card\");\n            const thankCard = document.getElementById(\"thank\");\n            const textAfterSelect = document.getElementById(\"text-after-select\");\n            const numbers = document.querySelectorAll(\".rating-card__numbers__item\");\n            numbers.forEach(num => {\n                num.addEventListener(\"click\", () => {\n                    ratingCard === null || ratingCard === void 0 ? void 0 : ratingCard.classList.add(\"hide\");\n                    thankCard === null || thankCard === void 0 ? void 0 : thankCard.classList.add(\"show\");\n                    textAfterSelect.textContent = `You selected ${num.textContent} out of 5`;\n                });\n            });\n        }\n    }\n    return {\n        init: Toggler.start\n    };\n})();\nApp.init();\n\n\n//# sourceURL=webpack://interactive-rating-component-main/./src/typescript/index.ts?");
 
 /***/ })
 

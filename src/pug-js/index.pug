@@ -48,5 +48,18 @@ html(lang="en")
                 div(class="rating-card__submit")
                     button(class="btn") submit
 
+            section(class="thank" id="thank")
+                div(class="thank__img")
+                    +illustration()
+
+                span(class="thank__select" id="text-after-select")
+
+                div(class="thank__info")
+                    p(class="thank__info__title") Thank you!
+
+                    p(class="thank__info__desc")
+                        | We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!
+
+        +space()
         script(src="./public/main.bundle.js") 
         +no-script()
